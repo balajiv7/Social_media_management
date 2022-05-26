@@ -1,0 +1,32 @@
+<p class="head">Hello Admin!!!!!!!!!!!!!!!!!!</p>
+<div class="head">Have a Good Day</div>
+
+<button class="btn btn-primary viewall" (click)="view()">View all users</button>
+
+<table class="table">
+    <tr>
+      <th>USERNAME</th>
+      <th>EMAIL</th>
+      <th>PASSWORD</th>
+      <th>MOBILE</th>
+      
+    </tr>
+    <tr *ngFor="let user of alluserData">
+      <td>{{user.userName}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.password}}</td>
+      <td>{{user.mobile}}</td>
+    
+
+      <td><button class="btn info" (click)=" ViewById(user._id)">View </button> </td>
+      
+     <!-- <td> <button class="btn info" (click)=" view1()">View1 </button> </td> -->
+
+      <td><button class="btn info" (click)="erase(user._id,user._rev)">Delete </button> </td>
+  
+
+
+    </tr>
+  </table>  
+
+    

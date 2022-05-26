@@ -1,0 +1,15 @@
+.content{
+    border: 2px solid black;
+    background-color: grey;
+    width: 800px;
+    margin-left: 500px;
+    margin-top: 80px;
+    height: 70vh;
+}
+.title{
+    text-align: center;
+    margin-bottom: -10px;
+}
+.form-group{
+    width: 500px;
+}

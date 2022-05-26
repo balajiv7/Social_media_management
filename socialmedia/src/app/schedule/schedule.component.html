@@ -1,0 +1,79 @@
+<div class="container">
+  <h1 class="title">SCHEDULE YOUR POST</h1>
+<div class="content">
+  <div class="d-flex justify-content-center backcolor">
+    <form [formGroup]="formGroup" (ngSubmit)="storing(this.formGroup.value)">
+      <!-- <div class="form-group">
+        <label for="userName">User Name</label>
+        <input id="userName" class="form-control" formControlName="userName" placeholder="FirstName Required"
+          required />
+        <div class="help-block text-danger" *ngIf="userName.touched">
+          <span *ngIf="userName.errors?.required">
+            User Name is REQUIRED!!!
+          </span>
+        </div>
+      </div>
+      
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="form-control" formControlName="password" required />
+        <div class="help-block text-danger" *ngIf="password.touched">
+          <span *ngIf="password.errors?.required"> password is REQUIRED!!! </span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="mobile">Mobile Number</label>
+        <input id="mobile" class="form-control" formControlName="mobile" placeholder="Enter your phoneno" />
+      </div> -->
+      <div class="form-group">
+        <label for="FirstName">First Name</label>
+        <input id="FirstName" class="form-control" formControlName="firstName" placeholder="FirstName Required"
+         value="fn.firstName" required />
+          </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" class="form-control" formControlName="email" placeholder="Email (required)" required />
+        <div class="help-block text-danger" *ngIf="email.touched">
+          <span *ngIf="email.errors?.required"> Email is REQUIRED!!! </span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="post">POST</label>
+        <input id="post" type="textarea" class="form-control" formControlName="post" required />
+      </div>
+      <div class="form-group">
+        <label for="post">image</label>
+        <input id="image" type="file" (click)="fileSelected($event)"class="form-control" formControlName="image" required />
+      </div>
+
+      <div class="form-group">
+        <label for="Date">Date to post </label>
+        <input type="date" id="Date" class="form-control" formControlName="Date" required />
+      </div>
+
+      <div class="form-group">
+        <label for="social">Choose a social app to post:</label>
+        <select id="social" name="social" formControlName="social">
+          <option value="Facebook">Facebook</option>
+          <option value="Instagram">Instagram</option>
+          <option value="Youtube">Youtube</option>
+          <option value="Twitter">Twitter</option>
+        </select>
+
+      </div>
+
+      <div class="form-group">
+        <label for="Time">Time</label>
+        <input type="time" id="Time" class="form-control" formControlName="Time" required />
+      </div>
+      <hr />
+      <div class="move">
+      <button class="btn btn-primary" type="submit">Post</button> 
+      <button class="btn btn-primary"id="btn2" (click)="fetch()">View</button>
+    </div>
+    </form>
+  </div>
+  <!-- <button class="btn btn-primary" *ngIf="authservice.loggedIn()"(click)="authservice.logoutUser()">Logout</button> -->
+  </div>

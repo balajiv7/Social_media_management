@@ -1,0 +1,14 @@
+<div class="container">
+  <h1 class="title">LOGIN</h1>
+  <form [formGroup]="formGroup" (ngSubmit)="login(this.formGroup.value)">
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form2Example1">Email address</label>
+      <input type="email" id="form2Example1" formControlName="email" class="form-control" />
+    </div>
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form2Example2">Password</label>
+      <input type="password" id="form2Example2" formControlName="password" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary " (click)="login(this.formGroup.value)">Login</button>
+  </form>
+</div>

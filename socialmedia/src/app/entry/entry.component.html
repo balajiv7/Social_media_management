@@ -1,0 +1,33 @@
+<div class="container">
+  <h1 class="title">LOGIN</h1>
+<form [formGroup]="formGroup" (ngSubmit)="login(this.formGroup.value)">
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example1">Email address</label>
+        <input type="email" id="form2Example1" formControlName="email" class="form-control" />
+       
+      </div>
+    
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example2">Password</label>
+        <input type="password" id="form2Example2" formControlName="password" class="form-control" />
+        
+      </div>
+    
+      <!-- 2 column grid layout for inline styling -->
+      <div class="row mb-4">
+        <div class="col d-flex justify-content-center">
+        </div>
+    
+        
+      </div>
+    
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary "(click)="login(this.formGroup.value)">Login</button>
+      <button class="btn btn-primary"id="btn1" >Sign Up</button>
+      <!-- Register buttons -->
+      
+    </form>
+  </div>
+    

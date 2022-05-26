@@ -1,0 +1,31 @@
+<div class="center"> PERSON  INFO</div>
+<!-- <button class="btn btn-primary" (click)="view1()">show</button> -->
+<div class="container">
+<table class="table">
+    <tr>
+      <th>FIRSTNAME</th>
+      <!-- <th>EMAIL</th>
+      <th>PASSWORD</th>
+      <th>MOBILE</th> -->
+      <th>POST</th>
+      <th>DATE</th>
+      <th>TIME</th>
+      <th>POSTAPP</th>
+      <th>IMAGE</th>
+  
+    </tr>
+    <tr *ngFor="let user of arr">
+      <td>{{user.firstName}}</td>
+      <td>{{user.email}}</td>
+      <!-- <td>{{user.password}}</td>
+      <td>{{user.mobile}}</td> -->
+      <td>{{user.post}}</td>
+      <td>{{user.date}}</td>
+      <td>{{user.time}}</td>
+      <td>{{user.social}}</td>
+      <td>{{user.type}}</td>
+      <td><img src="..//../assets/images/{{user.image}}"></td>
+
+    </tr>
+  </table>  
+</div>

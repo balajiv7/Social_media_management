@@ -1,0 +1,30 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #2196F3;
+    padding: 10px;
+  }
+  
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom : 20px
+  }
+
+  .title {
+      text-align: center;
+      font-weight: bold;
+      font-size: 80px;
+  }
+
+  .name {
+       padding-top: 30px;
+  }
+  .head {
+      text-align: center;
+      font-size: 40px;
+      padding-bottom: 30px;
+  }
