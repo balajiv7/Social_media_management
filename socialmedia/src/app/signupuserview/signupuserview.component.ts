@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 
@@ -50,8 +49,7 @@ export class SignupuserviewComponent implements OnInit {
         console.log("custid" , this.custid);
         this.getBytype(this.custid);
       }
-      // var userid = data[this.rows].doc;
-      // console.log("userid",useri d);
+
   });
 
 
@@ -175,9 +173,9 @@ export class SignupuserviewComponent implements OnInit {
   
   
     ViewBYIndividual(id:any,temp3:any) {
-      for (let m = 0; m < temp3.length; m++) {
-        if(temp3[m]._id == id){
-          this.api.store(temp3[m]);
+      for (const element of temp3) {
+        if(element._id == id){
+          this.api.store(element);
           console.log("hi");
           this.api.show();
         }

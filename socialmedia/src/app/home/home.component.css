@@ -27,15 +27,10 @@ p {
     width:169px;
     padding-left: 9px;
 }
-/* .headinfo {
-    font-size: 30px;
-    color: navy;
-    text-transform: uppercase;
-} */
+
 
 img {
-    /* padding-left: 1900px; */
-    /* width: 400px; */
+    
     width :900px;
     height: 600px;
     padding-left: 150px;
@@ -46,7 +41,7 @@ img {
     width:10px;
 }
 .main{
-    /* display: flex; */
+ 
     justify-content: center;
     margin-top: 0px ;
     margin-left: -50px;

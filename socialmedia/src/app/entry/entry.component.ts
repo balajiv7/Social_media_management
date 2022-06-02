@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm, Validators } from '@angular/forms';
+import { FormGroup,FormBuilder} from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
-import { FormGroup } from '@angular/forms';
-import { FormBuilder } from '@angular/forms';
-import { HttpParams } from '@angular/common/http';
 import { ToastarService } from '../toastar.service';
 
 
