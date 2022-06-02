@@ -1,6 +1,6 @@
 
 const nodemail = require('nodemailer');
-// const { object } = require('./couch');
+
 var sender = nodemail.createTransport({
   service:'gmail',
   auth:{
