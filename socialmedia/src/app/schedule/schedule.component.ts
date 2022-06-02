@@ -115,9 +115,9 @@ mindate : any;
   storing(formdata: NgForm) {
     console.log(formdata);
    
-     var userdetail =JSON.parse(localStorage.getItem('userData'));
+     const userdetail =JSON.parse(localStorage.getItem('userData'));
      console.log(userdetail._id);
-    var objectnew = {      
+    const objectnew = {      
       firstName : this.formGroup.value.firstName,
       email : this.formGroup.value.email,
       post : this.formGroup.value.post,
@@ -149,7 +149,7 @@ mindate : any;
   {     
 
 
-    var postobj = {
+    const postobj = {
       social_1 : this.temp1,
       type : "postinfo",
       post : postid
