@@ -13,6 +13,7 @@
     font-size: 70px;
     margin-left: -250px;
     text-transform: uppercase;
+    padding-left: 380px;
 }
 .end {
     padding-top: 40px;
@@ -20,22 +21,20 @@
     font-size: 40px;
 }
 
-/* blog */
+
 .grid-container {
     display: grid;
-    /* color: white; */
+    
     grid-template-columns: auto auto auto;
-    /* background-color: #2196f3; */
-    /* background-image: url(../../assets/images/webdesign.jpg); */
+    
     background-repeat: no-repeat;
-    /* background-size: cover; */
+   
     padding: 10px;
   }
   .grid-item {
-    /* background-color: rgba(255, 255, 255, 0.8); */
-    /* border: 1px solid rgba(0, 0, 0, 0.8); */
+   
     padding: 20px;
-    /* font-size: 30px; */
+    
     text-align: center;
   }
   .grid-item:hover {
@@ -55,9 +54,7 @@
 .container {
     font-size: 35px;
 }
-.head {
-    padding-left: 380px;
-}
+
 .content {
     margin-top: 30px;
     font-size: 25px;

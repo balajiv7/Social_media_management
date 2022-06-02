@@ -140,6 +140,7 @@ a{
     font-size: 30px;
     color: indigo;
     font-weight: bold;
+    margin-left: 150px;
 }
 .nav-item {
     padding-right: 150px;
@@ -274,9 +275,6 @@ h5 {
     background-color: #fcbb47;
     color: #241f21;
     height: 40vh;
-}
-.logo{
-margin-left: 150px;
 }
 #icon{
 margin-left: -300px;
