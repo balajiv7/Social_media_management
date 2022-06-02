@@ -40,7 +40,7 @@ mindate : any;
 
   constructor(private fb: FormBuilder,private api:ApiService,private route:Router,private authservice :AuthenticationService,private alert:ToastarService) {
     
-    var fn =JSON.parse(localStorage.getItem('userData'));
+    const fn =JSON.parse(localStorage.getItem('userData'));
     this.api.newuserview("user",fn.email).subscribe((data)=> {
       console.log(data);
       this.userid=data
@@ -188,10 +188,10 @@ mindate : any;
   }
 
   pastdate(){
-     var date = new Date();
-     var tdydate:any = date.getDate();
-     var currentmonth:any = date.getMonth() + 1;
-     var currentyear:any = date.getFullYear();
+     let date = new Date();
+     let tdydate:any = date.getDate();
+     let currentmonth:any = date.getMonth() + 1;
+     let currentyear:any = date.getFullYear();
      if (tdydate < 10){
       tdydate = "0" + tdydate;
      }
