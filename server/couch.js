@@ -83,7 +83,7 @@ app.post('/postdata', function (req,res) {
         if((data.docs.length<1))
             {
             var name = req.body.firstname;
-            console.log(name);
+            console.log(name); 
             var objectnew = {
                 firstName : req.body.firstName,
                 lastName : req.body.lastName,
@@ -92,9 +92,9 @@ app.post('/postdata', function (req,res) {
                 type: 'user'
             }
             console.log("data from angular",objectnew);
-            dbconnection.trainee.insert(objectnew).then((data) => {
-                console.log("data inserted successfully",data);
-                res.send(data)
+            dbconnection.trainee.insert(objectnew).then((value) => {
+                console.log("data inserted successfully",value);
+                res.send(value)
             }).catch((err=>{
             console.log("err1",err);
             res.status(400).send({
@@ -131,25 +131,7 @@ app.post('/postdata/:id', function (req,res) {
     });
 });
 
-app.post('/mail',(request,response,next)=>{
-    console.log('mmm');
-   
-    var object ={
-        firstname : request.body.firstName,
-        email : request.body.email,
-        password : request.body.password,
-        mobile : request.body.mobile,
-        post : request.body.post,
-        date : request.body.Date,
-        time : request.body.Time,
-        image : request.body.image,
-        social :request.body.social
-    }
-    setmail.getemail(object);
-    console.log(object);
-    response.send(json);
 
-})
 
     
     
