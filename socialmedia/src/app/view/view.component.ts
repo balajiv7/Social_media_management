@@ -33,7 +33,7 @@ empRecord: any = {
 public userData:any;
 constructor(private fb: FormBuilder , private route: Router, private api : ApiService) {
     
-  var fn =JSON.parse(localStorage.getItem('userData'));
+  let fn =JSON.parse(localStorage.getItem('userData'));
   console.log(fn);
   this.userData = fn
  
