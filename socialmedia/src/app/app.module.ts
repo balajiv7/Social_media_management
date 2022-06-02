@@ -13,15 +13,10 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { ViewComponent } from './view/view.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { View1Component } from './view1/view1.component';
-import { AdminComponent } from './admin/admin.component';
-import { AdminviewComponent } from './adminview/adminview.component';
-import { UpdateComponent } from './update/update.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { NewsComponent } from './news/news.component';
 import { ContactComponent } from './contact/contact.component';
-import { UserinfoComponent } from './userinfo/userinfo.component';
-import { ToastarService } from './toastar.service';
  import { ToastrModule } from 'ngx-toastr';
 import { HttpCallInterceptorService } from './http-call-interceptor.service';
 import { SignupuserviewComponent } from './signupuserview/signupuserview.component';
@@ -36,14 +31,10 @@ import { SignupuserviewComponent } from './signupuserview/signupuserview.compone
     ViewComponent,
     ResourcesComponent,
     View1Component,
-    AdminComponent,
-    AdminviewComponent,
-    UpdateComponent,
     NavComponent,
     FooterComponent,
     NewsComponent,
     ContactComponent,
-    UserinfoComponent,
     SignupuserviewComponent,
   
   ],

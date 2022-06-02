@@ -8,11 +8,8 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { ViewComponent } from './view/view.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { View1Component } from './view1/view1.component';
-import { AdminComponent } from './admin/admin.component';
-import { AdminviewComponent } from './adminview/adminview.component';
 import { NewsComponent } from './news/news.component';
 import { ContactComponent } from './contact/contact.component';
-import { UserinfoComponent } from './userinfo/userinfo.component';
 import { SignupuserviewComponent } from './signupuserview/signupuserview.component';
 
 
@@ -25,11 +22,8 @@ const routes: Routes = [
   {path : 'view', component:ViewComponent},
   {path : 'about' , component:ResourcesComponent},
   {path : 'view1' , component:View1Component},
-  {path:'admin',component:AdminComponent},
-  {path : 'adminview/:id',component:AdminviewComponent},
   {path:'news',component:NewsComponent},
   {path:'contact',component:ContactComponent},
-  {path:'userinfo',component:UserinfoComponent},
   {path:'signupuserview',component:SignupuserviewComponent}
 
 ];

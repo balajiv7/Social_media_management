@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-// import { reverse } from 'dns';
+
 
 
 @Injectable({
@@ -27,7 +27,6 @@ httpOptions = {
 add(db:string,doc: object):Observable<{}> {
 
   const url = this.url+db;
-  // this.mail(doc);
   return this.http.post(url,doc,this.httpOptions)
   
 }
@@ -43,7 +42,7 @@ getpostdetails(db:string,keys:any):Observable<{}>{
 }
 
 delete(id:string,rev:string):Observable<{}> {
-  // const url = this.url+'balaji_trainee/' +id+ '/?rev' +rev;
+
   const urld = this.url + 'balaji_trainee/' + id + '/?rev=' + rev;
 
   return this.http.delete(urld,this.httpOptions);
@@ -94,9 +93,9 @@ getpostinfobyview(type:any,id:any) {
   return this.http.post(url,keys,this.httpOptions);
 }
 
-getsocialinfobyview(type:any,id:any) {
+getsocialinfobyview(id:any) {
   let url = this.url + 'balaji_trainee/_all_docs?include_docs=true'
-
+ 
   let keys = {"keys" : id}
 
   return this.http.post(url,keys,this.httpOptions);
@@ -129,7 +128,7 @@ viewById(id:string,type:string,email:string,fields:any) {
     return this.http.post(url, typedData, this.httpOptions);
 }
 
-viewByuserId(id:string,type:string,email:string,time:any,fields:any) {
+viewByuserId(id:string,email:string,time:any,fields:any) {
   console.log(id);
   let url = this.url + 'balaji_trainee/_find'
     let typedData = {
@@ -169,7 +168,7 @@ storedata(formvalue:any)
   console.log(formvalue);
   return this.http.post<any>('http://localhost:8000/postdata/',formvalue);
 }
-checkuserlogin(email:any,password:any)
+checkuserlogin(email:any)
  {
   return this.http.get<any>('http://localhost:8000/getdata/'+email);
  }
@@ -201,7 +200,7 @@ storepostdata(formvalue:any)
 {
 
   console.log(formvalue); 
-  var id = formvalue.user;
+  
   return this.http.post<any>('http://localhost:8000/postdata/id/',formvalue);
 
 }

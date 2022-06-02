@@ -3,10 +3,7 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
 import { ApiService } from '../api.service';
-import { HttpParams } from '@angular/common/http';
-import { variable } from '@angular/compiler/src/output/output_ast';
 import { ToastarService } from '../toastar.service';
-import { DatePipe } from '@angular/common';
  
 
 @Component({
@@ -155,7 +152,7 @@ mindate : any;
     var postobj = {
       social_1 : this.temp1,
       type : "postinfo",
-      post : this.postid
+      post : postid
     }
    console.log(postobj);
     console.log(Formvalue.email);
@@ -168,8 +165,8 @@ mindate : any;
          rev : res['rev'],
          imageData:{"images":this.image1}
        }
-        this.api.postingimage(imageUpload).subscribe(res=>{
-          console.log(res)
+        this.api.postingimage(imageUpload).subscribe(data=>{
+          console.log(data)
         },err=>{
           console.log(err)
         })
@@ -208,28 +205,7 @@ mindate : any;
     
     
 
-  async fileSelected(event){
-   
-
-    const fr = new FileReader()
-const file = event.target.files[0]
-const p1 =await new Promise(resolve=>{
-  fr.readAsDataURL(file)
-  fr.onload = function(event) {
-console.log('yesh',event)
-const base64 = event.target.result
-
-      // const blob = new Blob([fr.result], {type: "image/png"})
-    
-      // const url = URL.createObjectURL(blob);
-      resolve(base64)
-  }
   
-})
- 
-    this.image1 = p1
-  }
-
 
 
 

@@ -41,10 +41,10 @@ export class EntryComponent implements OnInit {
 
  login(obj:any){
   this.email=obj.email
-  this.password=obj.password,
+  this.password=obj.password
 
   
- this.api.checkuserlogin(this.email,this.password).subscribe(data=>{
+ this.api.checkuserlogin(this.email).subscribe(data=>{
      console.log(data);
 
      if((data.docs[0].email == this.email)&&(data.docs[0].type == "user"))

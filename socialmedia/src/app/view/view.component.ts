@@ -36,7 +36,7 @@ constructor(private fb: FormBuilder , private route: Router, private api : ApiSe
   var fn =JSON.parse(localStorage.getItem('userData'));
   console.log(fn);
   this.userData = fn
-  const temp = fn;
+ 
    this.getBytype(fn._id);
 
 {
@@ -51,6 +51,7 @@ console.log(this.formGroup)
 
 
 ngOnInit(): void {
+  console.log("view");
 }
 get firstName(){
 return this.formGroup.get('firstName')!
@@ -84,36 +85,38 @@ return this.formGroup.get('firstName')!
      this.temp2 = data;
      this.temp2 = this.temp2.docs;
     console.log(this.temp2);
-      for (let index = 0; index < this.temp2.length; index++) {
-         this.element = this.temp2[index];
-        console.log(this.element);      
-      }
+      
+      for (let temp of this.temp2) {
+        this.element = temp;
+     }
       console.log("postIDSfulldocs",this.temp2);
 
       for (let index = 0; index < this.temp2.length; index++) {
           this.ids[index] = this.temp2[index]._id 
       }
-
+      
   
 
-    this.api.getpostinfobyview("postinfo",this.ids).subscribe((data:any)=>{
-      console.log(data);
-     this.socialdetails = data.rows
+    this.api.getpostinfobyview("postinfo",this.ids).subscribe((res:any)=>{
+      console.log(res);
+     this.socialdetails = res.rows
 
      this.socialdetails = this.socialdetails.map(el=>el.doc)
      console.log(this.socialdetails)
      this.socialids = [];
-     for (let k = 0; k< this.socialdetails.length; k++) {
-      const socialids = this.socialdetails[k]
-      if(socialids && socialids['social_1'] && !this.socialids.includes(socialids['social_1']))
-    this.socialids.push(socialids['social_1']) ;
+  
+     for (let social of this.socialdetails) {
+      const socialids = social
+      if(socialids && socialids['social_1'] && !this.socialids.includes(socialids['social_1'])){
+        this.socialids.push(socialids['social_1']) ;
+      }
 
      }
    console.log("SOCIALIDS",this.socialids);
 
-     this.api.getsocialinfobyview("social",this.socialids).subscribe((data:any) => {
-       console.log(data);
-      this.socialapp = data.rows.map(el=>el.doc);
+     this.api.getsocialinfobyview(this.socialids).subscribe((result:any) => {
+       console.log(result);
+      this.socialapp = result.rows.map(el=>el.doc);
       this.temp2.forEach(element => {
        
        const postinfo = this.socialdetails.filter(el=>el.post === element['_id'] )[0]
@@ -145,7 +148,7 @@ return this.formGroup.get('firstName')!
 
   ViewById(id:any,type:any,email:any,time:any) {
     console.log(type);
-    this.api .viewByuserId(id,type,email,time,this.fields).subscribe(data => {
+    this.api .viewByuserId(id,email,time,this.fields).subscribe(data => {
       console.log(data);
       this.temp3 = data;
       this.temp3 = this.temp3.docs;
@@ -159,9 +162,9 @@ return this.formGroup.get('firstName')!
 
 
   ViewBYIndividual(id:any,temp3:any) {
-    for (let m = 0; m < temp3.length; m++) {
-      if(temp3[m]._id == id){
-        this.api.store(temp3[m]);
+    for (const element of temp3) {
+      if(element._id == id){
+        this.api.store(element);
         console.log("hi");
         this.api.show();
       }

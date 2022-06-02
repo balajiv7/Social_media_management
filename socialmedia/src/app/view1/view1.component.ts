@@ -16,7 +16,7 @@ public userData:any;
     var fn =JSON.parse(localStorage.getItem('userData'));
     console.log(fn);
     this.userData = fn
-    const temp = fn;
+ 
 
     console.log(this.api.show());
     this.data = this.api.show();
@@ -32,6 +32,7 @@ public userData:any;
 }
 
   ngOnInit(): void {
+    console.log("single view");
   }
   view1() {
     console.log(this.api.show());

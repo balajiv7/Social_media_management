@@ -9,7 +9,7 @@ export class SignInData {
     getEmail(): string {
         return this.email;
     }
-    getPassword() : String{
+    getPassword() : string{
         return this.password;
     }
 }

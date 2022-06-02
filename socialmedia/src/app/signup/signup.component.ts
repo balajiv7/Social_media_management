@@ -34,24 +34,15 @@ export class SignupComponent implements OnInit {
    lastName: ['',Validators.required],
    email:['',[Validators.required, Validators.pattern("[a-zA-Z0-9]*@gmail.com")]],
    password: ['',[Validators.required,Validators.pattern("[a-zA-z@_]{6,}")]],
-  //  email: ['',Validators.required ],
-    //  password:['',Validators.required],
+
    mobile: ['',[Validators.required, Validators.min(1000000000),Validators.max(9999999999)]],
-  //  address:['',Validators.required],
-  //   permanentAddress:['',Validators.required],
-  //   Aadhar:['',[Validators.required,Validators.min(1000000000),Validators.max(9999999999)]],
-  //   age:['',[Validators.required,Validators.min(10),Validators.max(100)]]
+ 
    
   });
  }
  console.log(this.formGroup)
 
-//  onsubmit(this.formGroup) {
-//           this.submitted = true;
-//           console.log('Valid?', this.formGroup.valid); // true or false
-//           console.log('Email', this.formGroup.value.email);
-//           console.log('Password', this.formGroup.value.password);
-//       }
+
 
   
   
@@ -61,7 +52,7 @@ export class SignupComponent implements OnInit {
 
  ngOnInit(): void {
  
-
+  console.log("signup page");
  }
  get firstName(){
   return this.formGroup.get('firstName')!
@@ -82,12 +73,7 @@ get password() {
 login() {
   this.route.navigate(['Login']);
 }
-//pass to another component via api
-// storing(formdata: NgForm) {
-//  // console.log(formdata);
-//  // this.store.pushData(formdata);
-// console.log('hi')
-// }
+
 
 storing(Formvalue:any){
     
