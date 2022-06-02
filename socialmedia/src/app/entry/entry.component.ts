@@ -33,7 +33,7 @@ export class EntryComponent implements OnInit {
   });
  }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    console.log("Login page");
   }
 
  login(obj:any){

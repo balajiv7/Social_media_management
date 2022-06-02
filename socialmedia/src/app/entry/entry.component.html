@@ -1,6 +1,6 @@
 <div class="container">
   <h1 class="title">LOGIN</h1>
-<form [formGroup]="formGroup" (ngSubmit)="login(this.formGroup.value)">
+<form [formGroup]="formGroup">
     
       <div class="form-outline mb-4">
         <label class="form-label" for="form2Example1">Email address</label>
@@ -19,8 +19,11 @@
         <div class="col d-flex justify-content-center">
  
       </div>
-      <button type="submit" class="btn btn-primary "(click)="login(this.formGroup.value)">Login</button>
-      <button class="btn btn-primary"id="btn1" (click)="signup()" >Sign Up</button>
+      <!-- <button (click)="login(this.formGroup.value)">Login</button>
+      <button id="btn1" (click)="signup()" >Sign Up</button> -->
+
+      <button class="btn btn-primary" (click)="login(this.formGroup.value)">Login</button> <span> Or <button class="btn btn-secondary"
+        routerLink="/signup">SIGNUP</button> </span>
      </div>
       
     </form>

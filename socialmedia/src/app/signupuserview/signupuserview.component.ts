@@ -130,7 +130,7 @@ export class SignupuserviewComponent implements OnInit {
   
        this.api.getsocialinfobyview(this.socialids).subscribe((output:any) => {
          console.log(output);
-        this.socialapp = data.rows.map(el=>el.doc);
+        this.socialapp = output.rows.map(el=>el.doc);
         this.temp2.forEach(element => {
          
          const postinfo = this.socialdetails.filter(el=>el.post === element['_id'] )[0]

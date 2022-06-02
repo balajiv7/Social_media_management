@@ -24,6 +24,7 @@ fields : any;
 temp:any;
 mindate : any;
 
+
   postRecord : any = {
     firstName: '',
     email : '',
@@ -81,7 +82,7 @@ mindate : any;
     this.pastdate()
   }
  
-
+url = "";
   
 
   get firstName() {
@@ -151,6 +152,7 @@ mindate : any;
 
     const postobj = {
       social_1 : this.temp1,
+      image : this.url,
       type : "postinfo",
       post : postid
     }
@@ -223,5 +225,16 @@ mindate : any;
    console.log(this.temp1);
     return this.temp1;
    
+  }
+
+  fileSelected(e) {
+    if(e.target.files) {
+      var reader = new FileReader();
+      reader.readAsDataURL(e.target.files[0]);
+      reader.onload = (event:any)=>{
+        this.url = event.target.result;
+        console.log(this.url);
+      }
+    }
   }
 }
