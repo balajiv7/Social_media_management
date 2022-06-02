@@ -1,51 +1,46 @@
-<div>
+<section class="total">
+  <div>
   <h1 class="head">What is Social Media Scheduling?</h1>
 <p class="para">Social media scheduling tools are the easiest way to keep your social media accounts updated consistently. Social media scheduling allows you to share your content at times when your audience is most likely to be consuming the content, and with this tool, you'll always hit publish on a time when engagement is highest. Learn more about Social Media Post Scheduling
 </p>
 </div>
-<!-- 
-<form [formGroup]="formGroup" (ngSubmit)="getBytype(this.formGroup.value)">
-<div class="form-group">
-  <label for="FirstName">First Name</label>
-  <input id="FirstName" class="form-control" formControlName="firstName" placeholder="FirstName Required"
-    required />
-    </div>
-    <button class="btn btn-primary" type="submit">VIEW YOUR SCHEDULES</button>
-</form> -->
-
-
+<div class="container">
 <table class="table">
     <tr>
       <th>FIRSTNAME</th>
-     
-      <th>POST</th>
+     <th>EMAIL</th>
+      <th>CAPTION</th>
       <th>DATE</th>
       <th>TIME</th>
       <th>SOCIAL</th>
+      <!-- <th>POST</th> -->
+
   
     </tr>
     <tr *ngFor="let user of temp2">
-      <td>{{user.firstName}}</td>
-       <td>{{user.email}}</td>
-     <!-- <td>{{user.password}}</td>
-      <td>{{user.mobile}}</td> -->
+      <td>{{userData.firstName}}</td>
+       <td>{{userData.email}}</td>
       <td>{{user.post}}</td>
       <td>{{user.date}}</td>
       <td>{{user.time}}</td>
       <td>{{user.social}}</td>
+    
   
-      <td><img src="..//../assets/images/{{user.image}}"></td>
+      <!-- <td><img src="..//../assets/images/{{user.image}}"></td> -->
+     
 
-      <td><button class="btn info" (click)=" ViewById(user._id,user.type,user.email)">View </button> </td>
+      <td><button class="btn info" (click)="ViewBYIndividual(user._id,temp2)">View </button> </td>
+
 
       <td><button class="btn info del" (click)="erase(user._id,user._rev)">Delete </button> </td>
 </tr>
+
 </table>
+</div>
+<div class="down">
+      <button class="btn btn-primary" id="logout" (click)=out()>logout</button>
+    </div>
 
-      <button class="btn btn-secondary" (click)=out()>logout</button>
-
-
-
-  
+</section>
 
     

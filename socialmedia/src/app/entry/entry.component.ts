@@ -5,6 +5,8 @@ import { ApiService } from '../api.service';
 import { FormGroup } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { HttpParams } from '@angular/common/http';
+import { ToastarService } from '../toastar.service';
+
 
 @Component({
   selector: 'app-entry',
@@ -23,7 +25,7 @@ export class EntryComponent implements OnInit {
  password: any;
   
  
- constructor(private fb: FormBuilder, private api: ApiService, private router: Router, private data: ApiService) {
+ constructor(private fb: FormBuilder, private api: ApiService, private router: Router, private data: ApiService,private alert : ToastarService) {
 
 
   this.formGroup = this.fb.group({
@@ -39,26 +41,32 @@ export class EntryComponent implements OnInit {
 
  login(obj:any){
   this.email=obj.email
-  this.password=obj.password
+  this.password=obj.password,
+
   
  this.api.checkuserlogin(this.email,this.password).subscribe(data=>{
      console.log(data);
 
-     if((data.docs[0].password == this.password)&&(data.docs[0].type == "user"))
+     if((data.docs[0].email == this.email)&&(data.docs[0].type == "user"))
      {
-       alert("success!!");
+    this.alert.showSuccess("successfully","logged in");
+
        console.log(data.docs[0].firstName);
-    //  var hi = this.api.store1(data.docs[0].firstname);
     const userData = data.docs[0];
      localStorage.setItem('userData',JSON.stringify(userData))
-  this.router.navigate(['schedule',data.docs[0].firstName]);
+    this.router.navigate(['schedule',data.docs[0].firstName]);
      }
      else{
-      // this.toastr.warning("Hi Patient wrong authentication,Please enter correct Email and Password");
-      alert("Login authentication failed");
+    this.alert.showSuccess("enter correct emailid","or password");
+
+     
      }
     })
   
+ }
+
+ signup() {
+   this.router.navigate(['signup']);
  }
 
 }

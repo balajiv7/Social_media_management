@@ -1,5 +1,6 @@
 .container{
     height: 70vh;
+    
 }
 .center {
     text-align: center;
@@ -10,3 +11,52 @@
 td,th {
     font-size: 20px;
 }
+.table{
+    border: 2px solid gray;
+    background-image: linear-gradient(to right,violet,rgb(141, 213, 232));
+}
+
+/* .info {
+    background: red;
+    
+   
+}
+
+.table{
+    margin-top: 30px;
+    border: 2px solid gray;
+    background-image: linear-gradient(to right,violet,rgb(141, 213, 232));
+   margin-left: -100px;
+   height: 100vh;
+}
+.para{
+font-size: 25px;
+width: 958px;
+margin-left: 10px;
+
+}
+.head{
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+   font-size: 80px;
+   font-weight: 300;
+   
+} */
+/* .btn{
+    margin-top: 10px;
+    height: 8vh;
+     
+} */
+/* td,th {
+    font-size: 23px;
+    
+}
+#logout{
+    margin-left: 700px;
+} */
+/* .total{
+    background-image: url('../../assets/images/media5.avif');
+    margin-bottom: -50px;
+    margin-left: -30px;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */

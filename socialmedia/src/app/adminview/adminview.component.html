@@ -5,20 +5,20 @@
 
 <table class="table">
     <tr>
-      <th>USERNAME</th>
+      <th>FIRSTNAME</th>
+      <th>LASTNAME</th>
       <th>EMAIL</th>
-      <th>PASSWORD</th>
-      <th>MOBILE</th>
+    
       
     </tr>
-    <tr *ngFor="let user of alluserData">
-      <td>{{user.userName}}</td>
+    <tr *ngFor="let user of temp2">
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
       <td>{{user.email}}</td>
-      <td>{{user.password}}</td>
-      <td>{{user.mobile}}</td>
+      
     
 
-      <td><button class="btn info" (click)=" ViewById(user._id)">View </button> </td>
+      <td><button class="btn info" (click)=" ViewById(user._id,user.type,user.email)">View </button> </td>
       
      <!-- <td> <button class="btn info" (click)=" view1()">View1 </button> </td> -->
 

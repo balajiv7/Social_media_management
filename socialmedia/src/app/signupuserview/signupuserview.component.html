@@ -1,0 +1,29 @@
+
+<table class="table">
+    <tr>
+      <th>FIRSTNAME</th>
+     <th>EMAIL</th>
+      <th>CAPTION</th>
+      <th>DATE</th>
+      <th>TIME</th>
+      <th>SOCIAL</th>
+      <!-- <th>POST</th> -->
+
+  
+    </tr>
+    <tr *ngFor="let user of temp2">
+      <td>{{userData.firstName}}</td>
+       <td>{{userData.email}}</td>
+      <td>{{user.post}}</td>
+      <td>{{user.date}}</td>
+      <td>{{user.time}}</td>
+      <td>{{user.social}}</td>
+
+  
+      <!-- <td><img src="..//../assets/images/{{user.image}}"></td> -->
+     
+
+</tr>
+</table>
+<button class="btn btn-secondary" (click)=out()>logout</button>
+

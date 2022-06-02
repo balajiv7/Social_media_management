@@ -4,27 +4,22 @@
 <table class="table">
     <tr>
       <th>FIRSTNAME</th>
-      <!-- <th>EMAIL</th>
-      <th>PASSWORD</th>
-      <th>MOBILE</th> -->
-      <th>POST</th>
+      <th>EMAIL</th>
+      <th>CAPTION</th>
       <th>DATE</th>
       <th>TIME</th>
       <th>POSTAPP</th>
-      <th>IMAGE</th>
+      <!-- <th>IMAGE</th> -->
   
     </tr>
-    <tr *ngFor="let user of arr">
-      <td>{{user.firstName}}</td>
-      <td>{{user.email}}</td>
-      <!-- <td>{{user.password}}</td>
-      <td>{{user.mobile}}</td> -->
-      <td>{{user.post}}</td>
-      <td>{{user.date}}</td>
-      <td>{{user.time}}</td>
-      <td>{{user.social}}</td>
-      <td>{{user.type}}</td>
-      <td><img src="..//../assets/images/{{user.image}}"></td>
+      <tr>
+      <td>{{userData.firstName}}</td>
+      <td>{{userData.email}}</td>
+      <td>{{arr.post}}</td>
+      <td>{{arr.date}}</td>
+      <td>{{arr.time}}</td>
+      <td>{{arr.social}}</td>
+      <!-- <td><img src="..//../assets/images/{{arr.image}}"></td> -->
 
     </tr>
   </table>  

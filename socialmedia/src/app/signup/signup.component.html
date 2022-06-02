@@ -63,7 +63,7 @@
 
         <div class="form-group">
           <label for="lname">Last Name</label>
-          <input id="lname" class="form-control" formControlName="lastName" required />
+          <input id="lname" class="form-control" formControlName="lastName" placeholder="LastName Required" required />
 
         </div>
 
@@ -74,10 +74,10 @@
             <span *ngIf="email.errors?.required"> Email is REQUIRED!!! </span>
           </div>
         </div>
-
+        <!-- "regForm.controls.mobileNumber.errors && regForm.controls.mobileNumber.touched" -->
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" class="form-control" formControlName="password" required />
+          <input type="password" id="password" class="form-control" formControlName="password" placeholder="password required" required />
           <div class="help-block text-danger" *ngIf="password.touched">
             <span *ngIf="password.errors?.required"> password is REQUIRED!!! </span>
           </div>
@@ -85,13 +85,36 @@
 
         <div class="form-group">
           <label for="mobile">Mobile Number</label>
-          <input id="mobile" class="form-control" formControlName="mobile" placeholder="Enter your phoneno" />
-        </div>
-
-        <hr />
+          <input id="mobile" class="form-control" formControlName="mobile" placeholder="MobileNumber required" placeholder="Enter your phoneno"/>
+          <div class="help-block text-danger" *ngIf="mobile.touched">
+          <span *ngIf="formGroup.controls.mobile.errors && formGroup.controls.mobile.touched" isdisabled> mobileNumber is REQUIRED!!! </span>
+          </div>
+        </div><br>
+<!-- 
+<br><br>
+        <div> <h1> ADDITIONAL INFORMATION </h1>
+<br>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input id="address" class="form-control" formControlName="address" placeholder="Enter your Residental address" />
+          </div> <div class="form-group">
+            <label for="PermanentAddress">Permanent Address</label>
+            <input id="PermanentAddress" class="form-control" formControlName="permanentAddress" placeholder="Enter your Permanent Address" />
+          </div> <div class="form-group">
+            <label for="Aadhar">Aadhar Number</label>
+            <input id="Aadhar" class="form-control" formControlName="Aadhar" placeholder="Enter your Aadharnumber" />
+          </div> <div class="form-group">
+            <label for="age">Age</label>
+            <input id="age" class="form-control" formControlName="age" placeholder="Enter your Age" />
+          </div> 
+      </div>
+        <hr /> -->
         <button class="btn btn-primary" type="submit">Sign Up</button> <span> Or <button class="btn btn-secondary"
             routerLink="/Login">Login</button> </span>
-        
+         
+            <!-- <button (click)="showToasterSuccess()">
+              Success Toaster
+          </button> -->
       </form>
     </div>
     </div>

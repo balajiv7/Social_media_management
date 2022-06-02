@@ -18,7 +18,7 @@ export class AdminComponent implements OnInit {
  
    email: '',
    password: '',
-   type: 'login'
+   type: 'admin'
   };
   email: any;
   password: any;
@@ -40,11 +40,11 @@ export class AdminComponent implements OnInit {
    this.email=obj.email
    this.password=obj.password  
      
-  this.api.checkuserlogin(this.email,this.password).subscribe(data=>{
+  this.api.checkadminlogin(this.email,this.password).subscribe(data=>{
    
       console.log(data);
      
-      if((data.docs[0].email==this.email)&&(data.docs[0].password == this.password)&&(data.docs[0].type== "Admin"))
+      if((data.docs[0].email==this.email)&&(data.docs[0].password == this.password)&&(data.docs[0].type== "admin"))
       {
         alert("success!!")
        this.router.navigate(['adminview',this.email]);

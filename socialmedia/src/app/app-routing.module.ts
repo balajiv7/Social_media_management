@@ -12,6 +12,8 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminviewComponent } from './adminview/adminview.component';
 import { NewsComponent } from './news/news.component';
 import { ContactComponent } from './contact/contact.component';
+import { UserinfoComponent } from './userinfo/userinfo.component';
+import { SignupuserviewComponent } from './signupuserview/signupuserview.component';
 
 
 const routes: Routes = [ 
@@ -26,7 +28,9 @@ const routes: Routes = [
   {path:'admin',component:AdminComponent},
   {path : 'adminview/:id',component:AdminviewComponent},
   {path:'news',component:NewsComponent},
-  {path:'contact',component:ContactComponent}
+  {path:'contact',component:ContactComponent},
+  {path:'userinfo',component:UserinfoComponent},
+  {path:'signupuserview',component:SignupuserviewComponent}
 
 ];
 

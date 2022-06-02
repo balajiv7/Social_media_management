@@ -46,7 +46,7 @@ img {
     width:10px;
 }
 .main{
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     margin-top: 0px ;
     margin-left: -50px;
@@ -211,4 +211,109 @@ h5 {
 }
 .p-3 {
     padding-top: 80px;
+}
+.caption{
+    margin-top: -600px;
+    margin-left: 280px;
+    color: wheat;
+    font-size: 100px;
+    
+}
+.caption1{
+    margin-left: 460px;
+    font-size: 50px;
+    color: wheat;
+    margin-top: 80px;
+    
+}
+.about{
+    font-size: 100px;
+    
+}
+.click{
+    margin-left: 700px;
+    margin-top: 50px;
+    width: 300px;
+    height: 80px;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-color: yellow;
+    background-color: rgb(240, 240, 86);
+}
+
+.lower{
+    margin-top: 300px;
+    text-align: center;
+}
+.video{
+    width: 1690px;
+    height: 100vh;
+}
+.parac{
+    text-align: center;
+    margin-left: 450px;
+}
+.media{
+    margin-left: 650px;
+}
+.align{
+   
+        margin-bottom: 1.2rem;
+        font-size: 5rem;
+        font-weight: 900;
+        line-height: 2.3rem;
+        margin-top: 60px;
+        margin-left: 20px;
+}
+.align1{
+  
+        margin: 0 0 1.2rem;
+        margin-top: 56px;
+        margin-left: 20px;
+}
+.panel{
+    margin-top: -310px;
+    margin-left: 748px;
+}
+.section--yellow-80 {
+    background-color: #fcbb47;
+    color: #241f21;
+    height: 40vh;
+}
+.logo{
+margin-left: 150px;
+}
+#icon{
+margin-left: -300px;
+margin-top: -150px;
+}
+.logo2{
+    margin-top: -569px;
+    margin-left: 495px;
+}
+.logo3{
+    margin-top: -657px;
+    margin-left: 116px;
+}
+.teams{
+    margin-left: -112px;
+    margin-top: -518px;
+    width: 237px;
+}
+.tit{
+    font-size: 65px;
+    font-family: none;
+    margin-top: -336px;
+    margin-left: 135px;
+}
+.selling{
+    margin-left: -112px;
+    margin-top: -407px;
+    width: 237px;
+}
+.tit1{
+    font-size: 65px;
+    font-family: none;
+    margin-top: -342px;
+    margin-left: 135px
 }

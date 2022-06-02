@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+// import { reverse } from 'dns';
 
 
 @Injectable({
@@ -35,6 +36,12 @@ get(db:string):Observable<{}>{
   const url = this.url+db+'/_all_docs?include_docs=true';
   return this.http.get(url,this.httpOptions);
 }
+
+getpostdetails(db:string,keys:any):Observable<{}>{
+  const url = this.url+db+'/_all_docs?include_docs=true';
+  return this.http.post(url,keys,this.httpOptions);
+}
+
 delete(id:string,rev:string):Observable<{}> {
   // const url = this.url+'balaji_trainee/' +id+ '/?rev' +rev;
   const urld = this.url + 'balaji_trainee/' + id + '/?rev=' + rev;
@@ -48,12 +55,66 @@ getByType(username:any,email:any,type: string, fields: any) {
       type: type,
       firstName:username,
       email : email
-     
      },
      fields: fields
     };
     return this.http.post(url, typedData, this.httpOptions);
 }
+
+getuserByType(type: string, fields: any) {
+  let url = this.url + 'balaji_trainee/_find'
+  let typedData = {
+   selector: {
+    type: type,
+   },
+   fields: fields
+  };
+  return this.http.post(url, typedData, this.httpOptions);
+}
+
+
+getPostInfoByPostId(id: any, fields: any) {
+  let url = this.url + 'balaji_trainee/_find'
+  let typedData = {
+   selector: {
+    type: "postinfo",
+    "post" : id
+   },
+   fields: fields
+  };
+  return this.http.post(url, typedData, this.httpOptions);
+}
+
+
+getpostinfobyview(type:any,id:any) {
+  let url = this.url + 'balaji_trainee/_design/postinfo/_view/postinfo-view?include_docs=true&attachments=true'
+
+  let keys = {"keys" : id.map(el => type+ el)}
+
+  return this.http.post(url,keys,this.httpOptions);
+}
+
+getsocialinfobyview(type:any,id:any) {
+  let url = this.url + 'balaji_trainee/_all_docs?include_docs=true'
+
+  let keys = {"keys" : id}
+
+  return this.http.post(url,keys,this.httpOptions);
+}
+
+getinfoByType(postapp:any,fields: any) {
+  console.log(postapp);
+  let url = this.url + 'balaji_trainee/_find'
+  let typedData = {
+   selector: {
+    type: "social",
+    "postapp" : postapp
+  },
+   fields: fields
+  };
+  return this.http.post(url, typedData, this.httpOptions);
+}
+
 viewById(id:string,type:string,email:string,fields:any) {
   console.log(id);
   let url = this.url + 'balaji_trainee/_find'
@@ -61,38 +122,90 @@ viewById(id:string,type:string,email:string,fields:any) {
      selector: {
       "type": type,
       "email" : email,
-      "_id" : id
-      // "post_id" : id,
-      // "post1_id": id
+      
      },
      fields: fields
     };
     return this.http.post(url, typedData, this.httpOptions);
+}
+
+viewByuserId(id:string,type:string,email:string,time:any,fields:any) {
+  console.log(id);
+  let url = this.url + 'balaji_trainee/_find'
+    let typedData = {
+     selector: {
+      "_id": id,
+      "email" : email,
+      "time" :time
+     },
+     fields: fields
+    };
+    return this.http.post(url, typedData, this.httpOptions);
+}
+
+getUserPostDetails(id:any)
+{
+ return this.http.get<any>('http://localhost:8000/getuserdata/'+id);
+}
+
+// https://5804af1c-53d6-4cc1-b0eb-5219a1cc5775-bluemix.cloudantnosqldb.appdomain.cloud/balaji_trainee/_all_docs?include_docs=true&attachments=true
+postingimage(imageData) {
+  // return this.http.put();const 
+  const url =`${this.url}balaji_trainee/${imageData.id}/images?rev=${imageData.rev}`
+  const header ={ headers: {
+    'Authorization' : this.basicAuth,
+    'Content-Type': 'image/jpg'
+  }}
+return this.http.put(url,imageData.imageData,header)
 }
 show() {
   console.log(this.temp);
   this.route.navigate(['view1']);
   return this.temp;
 }
-show2(){
-  console.log(this.temp);
-  return this.temp;
+storedata(formvalue:any)
+{
+  
+  console.log(formvalue);
+  return this.http.post<any>('http://localhost:8000/postdata/',formvalue);
 }
 checkuserlogin(email:any,password:any)
  {
   return this.http.get<any>('http://localhost:8000/getdata/'+email);
+ }
+ checkadminlogin(email:any,password:any)
+ {
+  return this.http.get<any>('http://localhost:8000/getdata/'+email+'/'+password);
  }
 
  edit(details:any) {
    return this.http.put<any>('http://localhost:8000//update_query/',details);
  }
 
-storedata(formvalue:any)
-{
-  console.log(formvalue);
-  return this.http.post<any>('http://localhost:8000/postdata/',formvalue);
-  // return this.http.post<any>('http://localhost:8000/mail/',formvalue)
+ newuserview(type:any,email:any) {
+   let url = this.url+'balaji_trainee/_design/userview/_view/new-userview?include_docs=true'
+
+   let key = {"keys" : [type+email]}
+   return this.http.post(url, key, this.httpOptions);
+ }
+ newpostview(type:any,post:any) {
+  let url = this.url+'balaji_trainee/_design/newpost/_view/new-postview?include_docs=true'
+
+  let key = {"keys" : [type+post]}
+  return this.http.post(url, key, this.httpOptions);
 }
+
+
+
+storepostdata(formvalue:any)
+{
+
+  console.log(formvalue); 
+  var id = formvalue.user;
+  return this.http.post<any>('http://localhost:8000/postdata/id/',formvalue);
+
+}
+
 mail(formvalue:any){
   console.log(formvalue);
   return this.http.post<any>('http://localhost:8000/mail/',formvalue);
@@ -107,31 +220,14 @@ store(data : any) {
   this.temp = data;
   console.log(this.temp);
   this.show();
-  this.pusharray.push(data)
-  console.log(this.temp);
-  this.temp5 = this.data;
- 
   return this.temp;
   
 }
 logout() {
   localStorage.removeItem('userData');
-  this.route.navigate(['home']);
-
+  this.route.navigate(['']);
 }
 
-store1(data : any) {
-  console.log("array ",data);
-  this.temp = data;
-
-  this.show2();
-  this.pusharray.push(data)
-  console.log(this.temp);
-  this.temp5 = this.data;
- 
-  return this.temp;
-  
-}
 
 
 
