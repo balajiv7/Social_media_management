@@ -24,7 +24,7 @@ app.get('/getdata/:id', (req,res) => {
 
    
 
-    var object = {
+    const object = {
         selector: {
             
             "email" : req.params.id,
@@ -45,7 +45,7 @@ app.get('/getuserdata/:id', (req,res) => {
     console.log("retreived......",req.params.id);
 
    
-    var object = {
+    const object = {
         selector: {
             
             "type" : "post",
@@ -71,7 +71,7 @@ app.get('/getuserdata/:id', (req,res) => {
 
 app.post('/postdata', function (req,res) {
     console.log("req",req.body.email)
-    var object = {
+    const object = {
         selector: {
             
             "type" : "user",
@@ -82,9 +82,9 @@ app.post('/postdata', function (req,res) {
         console.log("firstname",data);  
         if((data.docs.length<1))
             {
-            var name = req.body.firstname;
+            const name = req.body.firstname;
             console.log(name); 
-            var objectnew = {
+            const objectnew = {
                 firstName : req.body.firstName,
                 lastName : req.body.lastName,
                 email : req.body.email,
@@ -114,9 +114,9 @@ app.post('/postdata', function (req,res) {
 
 
 app.post('/postdata/:id', function (req,res) {
-    var name = req.body.firstname;
+    const name = req.body.firstname;
     console.log(name);
-    var objectnew = {
+    const objectnew = {
        
         post : req.body.post,
         date : req.body.date,
