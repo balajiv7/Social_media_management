@@ -13,7 +13,7 @@ public userData:any;
 
   constructor(private api:ApiService) { 
 
-    var fn =JSON.parse(localStorage.getItem('userData'));
+    const fn =JSON.parse(localStorage.getItem('userData'));
     console.log(fn);
     this.userData = fn
  
