@@ -114,7 +114,7 @@ app.post('/postdata', function (req,res) {
 app.post('/mail',(request,result)=>{
     console.log('mmm');
  
-    var object ={
+    const object ={
         firstname : request.body.Name,
         email : request.body.email,
         post : request.body.post,
