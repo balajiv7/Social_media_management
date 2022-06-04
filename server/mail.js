@@ -10,13 +10,13 @@ const sender = nodemail.createTransport({
 })
 module.exports.getemail = function(params)
 {
+
  
   const composemail = {
     from:'sweetybalaji2000@gmail.com',
     to:params.email,
-    subject:'node email',
-    text: "Name:"+"  "+ params.firstname +"  "+ "email:" + " "+params.email+ "  " +"mobile:"+"  "+params.mobile
-    +"  "+params.post +"  "+params.date+"   "+params.time+"   "+params.social
+    subject:'Post Planner',
+    text:"🎉🎉YOUR SCHEDULE INFORMATION IS HERE 🎉🎉"+ " Name 😎:"+"  "+ params.firstname +"     "+ "Email 📧:" + "  "+params.email+ "  "  +"  "+"Caption ⭐: "+params.post +"  "+"Date 📅:"+params.Date+"  "+"Sheduled Time ⏲: "+"   "+params.Time+"                     "+"  "+"Posting App: "+params.social +" "
   }
   sender.sendMail(composemail,function(err,res){
     if(err)

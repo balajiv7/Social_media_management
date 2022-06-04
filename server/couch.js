@@ -111,6 +111,24 @@ app.post('/postdata', function (req,res) {
 })
 
 
+app.post('/mail',(request,result)=>{
+    console.log('mmm');
+ 
+    var object ={
+        firstname : request.body.Name,
+        email : request.body.email,
+        post : request.body.post,
+        Date : request.body.date,
+        Time : request.body.time,
+        image : request.body.image,
+        social :request.body.postapp
+    }
+    setmail.getemail(object);
+    console.log(object);
+    result.send(json);
+
+})
+
 
 
 app.post('/postdata/:id', function (req,res) {
