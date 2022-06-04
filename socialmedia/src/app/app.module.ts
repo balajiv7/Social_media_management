@@ -12,7 +12,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { ViewComponent } from './view/view.component';
 import { ResourcesComponent } from './resources/resources.component';
-// import { View1Component } from './view1/view1.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { NewsComponent } from './news/news.component';
@@ -31,7 +30,6 @@ import { SignupuserviewComponent } from './signupuserview/signupuserview.compone
     ScheduleComponent,
     ViewComponent,
     ResourcesComponent,
-    // View1Component,
     NavComponent,
     FooterComponent,
     NewsComponent,
