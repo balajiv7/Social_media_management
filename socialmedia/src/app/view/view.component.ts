@@ -1,3 +1,4 @@
+import { fn } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -177,6 +178,11 @@ return this.formGroup.get('firstName')!
      localStorage.removeItem('userData'); 
     this.route.navigate(['']);
     
+  }
+  back() {
+    this.route.navigate(['schedule/']);
+    this.route.navigate(['schedule', this.userData.firstName]);
+
   }
  }
 

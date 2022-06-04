@@ -1,7 +1,7 @@
 <section class="total">
   <div>
   <h1 class="head">What is Social Media Scheduling?</h1>
-<p class="para">Social media scheduling tools are the easiest way to keep your social media accounts updated consistently. Social media scheduling allows you to share your content at times when your audience is most likely to be consuming the content, and with this tool, you'll always hit publish on a time when engagement is highest. Learn more about Social Media Post Scheduling
+<p class="para">Social media scheduling tools are the easiest way to keep your social media accounts updated consistently. Social media scheduling allows you to share your content at times when your audience is most likely to be consuming the content, and with this tool, you'll always hit publish on a time when engagement is highest.
 </p>
 </div>
 <div class="container">
@@ -26,7 +26,7 @@
       <td>{{user.date}}</td>
       <td>{{user.time}}</td>
       <td>{{user.social}}</td>
-      <td> <img src="{{user.image}}" alt="image" ></td>     
+      <td> <img class ="imageStyle" onerror="this.src='../../assets/images/spinner.gif'" src="{{user.image}}" alt="image" ></td>     
     
   
      
@@ -41,6 +41,7 @@
 </div>
 <div class="down">
       <button class="btn btn-primary" id="logout" (click)=out()>logout</button>
+      <button class="btn btn-primary" id="back" (click)=back()>Back</button>
     </div>
 
 </section>

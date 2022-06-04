@@ -5,6 +5,7 @@
       <div class="form-outline mb-4">
         <label class="form-label" for="form2Example1">Email address</label>
         <input type="email" id="form2Example1" formControlName="email" class="form-control" />
+        <span class="text-danger" *ngIf="formGroup.controls.email.errors && formGroup.controls.email.touched"><br>Invalid Email Address</span>
        
       </div>
     
@@ -12,18 +13,19 @@
       <div class="form-outline mb-4">
         <label class="form-label" for="form2Example2">Password</label>
         <input type="password" id="form2Example2" formControlName="password" class="form-control" />
-        
+        <span class="text-danger" *ngIf="formGroup.controls.password.errors && formGroup.controls.password.touched"><br>Invalid Password</span>
       </div>
    
       <div class="row mb-4">
         <div class="col d-flex justify-content-center">
  
       </div>
-      <!-- <button (click)="login(this.formGroup.value)">Login</button>
-      <button id="btn1" (click)="signup()" >Sign Up</button> -->
-
-      <button class="btn btn-primary" (click)="login(this.formGroup.value)">Login</button> <span> Or <button class="btn btn-secondary"
-        routerLink="/signup">SIGNUP</button> </span>
+    
+        <div>
+        <button type="button" class="login" (click)="login(this.formGroup.value)">Login</button>
+     
+        <button class="signup"routerLink="/signup">SIGNUP</button> 
+        </div>
      </div>
       
     </form>

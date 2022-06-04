@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { View1Component } from './view1.component';
+import { SingleviewComponent } from './singleview.component';
 
-describe('View1Component', () => {
-  let component: View1Component;
-  let fixture: ComponentFixture<View1Component>;
+describe('SingleviewComponent', () => {
+  let component: SingleviewComponent;
+  let fixture: ComponentFixture<SingleviewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ View1Component ]
+      declarations: [ SingleviewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(View1Component);
+    fixture = TestBed.createComponent(SingleviewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

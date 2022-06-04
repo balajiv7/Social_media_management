@@ -108,5 +108,5 @@ storing(Formvalue:any){
     },rej =>{
       console.log(rej)
       this.alert.showError("data cant post","error");
-    } );}
+    });}
   }

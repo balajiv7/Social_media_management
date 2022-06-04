@@ -1,6 +1,6 @@
 .info {
-    background: red;
-    
+    background: #082bf0;
+    color: beige;
    
 }
 
@@ -23,22 +23,23 @@ margin-left: 10px;
    font-weight: 300;
    
 }
-/* .btn{
-    margin-top: 10px;
-    height: 8vh;
-     
-} */
+
 td,th {
     font-size: 23px;
     
 }
 #logout{
-    margin-left: 700px;
+    margin-left: 1404px;
+    margin-top: -2190px;
+    width: 181px;
+    font-size: 39px;
+    font-family: sans-serif;
 }
-/* .total{
-    background-image: url('../../assets/images/media5.avif');
-    margin-bottom: -50px;
-    margin-left: -30px;
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
+#back{
+    margin-left: 1404px;
+    margin-top: -1990px;
+    width: 181px;
+    font-size: 39px;
+    font-family: sans-serif;
+}
+

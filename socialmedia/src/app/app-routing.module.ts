@@ -7,10 +7,10 @@ import { BlogComponent } from './blog/blog.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { ViewComponent } from './view/view.component';
 import { ResourcesComponent } from './resources/resources.component';
-import { View1Component } from './view1/view1.component';
 import { NewsComponent } from './news/news.component';
 import { ContactComponent } from './contact/contact.component';
 import { SignupuserviewComponent } from './signupuserview/signupuserview.component';
+import { SingleviewComponent } from './singleview/singleview.component';
 
 
 const routes: Routes = [ 
@@ -21,7 +21,8 @@ const routes: Routes = [
   {path :'schedule/:id', component:ScheduleComponent},
   {path : 'view', component:ViewComponent},
   {path : 'about' , component:ResourcesComponent},
-  {path : 'view1' , component:View1Component},
+  
+  {path : 'singleview', component : SingleviewComponent},
   {path:'news',component:NewsComponent},
   {path:'contact',component:ContactComponent},
   {path:'signupuserview',component:SignupuserviewComponent}

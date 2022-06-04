@@ -23,6 +23,7 @@ postid  :any;
 fields : any;
 temp:any;
 mindate : any;
+appvalue :any;
 
 
   postRecord : any = {
@@ -126,7 +127,7 @@ url = "";
       time : this.formGroup.value.Time,
       user : this.custid
   }
- 
+  
   console.log(objectnew.user);
 
    console.log("hello");
@@ -140,7 +141,7 @@ url = "";
       this.storingpostinfo(objectnew,this.postid);
      
      })
-     console.log(this.custid);
+     console.log("UserId : ",this.custid);
 
 
   }
@@ -156,6 +157,17 @@ url = "";
       type : "postinfo",
       post : postid
     }
+     const mailvalue = { 
+       Name : Formvalue.firstName,
+       email : Formvalue.email,
+       post : Formvalue.post,
+       date : Formvalue.date,
+       time : Formvalue.time,
+       image : postobj.image,
+       postapp : this.appvalue
+     };
+   
+
    console.log(postobj);
     console.log(Formvalue.email);
    
@@ -181,7 +193,9 @@ url = "";
        console.log(rej);
      });
      this.route.navigate(['signupuserview']);
- 
+     this.api.sendmail(mailvalue).subscribe((information => {
+       console.log(information);
+     }))
    }
 
   fetch() {
@@ -215,6 +229,7 @@ url = "";
   postSelected(event){
     
     console.log(event);
+    this.appvalue = event;
   this.api.getinfoByType(event,this.fields).subscribe((data =>{
     console.log(data);
   this.temp= data
@@ -229,12 +244,16 @@ url = "";
 
   fileSelected(e) {
     if(e.target.files) {
-      var reader = new FileReader();
+      let reader = new FileReader();
       reader.readAsDataURL(e.target.files[0]);
       reader.onload = (event:any)=>{
         this.url = event.target.result;
         console.log(this.url);
       }
     }
+  }
+  out() {
+    localStorage.clear();
+    this.route.navigate(['']);
   }
 }

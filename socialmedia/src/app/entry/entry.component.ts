@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormBuilder} from '@angular/forms';
+import { FormGroup,FormBuilder, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { ToastarService } from '../toastar.service';
@@ -27,8 +27,8 @@ export class EntryComponent implements OnInit {
 
   this.formGroup = this.fb.group({
 
-   email: [this.empRecord.email],
-   password: [this.empRecord.password],
+   email: ['',Validators.required],
+   password: ['',Validators.required],
    type: [this.empRecord.type]
   });
  }
@@ -44,7 +44,11 @@ export class EntryComponent implements OnInit {
  this.api.checkuserlogin(this.email).subscribe(data=>{
      console.log(data);
 
-     if((data.docs[0].email == this.email)&&(data.docs[0].type == "user"))
+if(data.docs.length <=0){
+  this.alert.showError("Invalid Data", "Email doesnot Exist");
+}
+
+     else if((data.docs[0].email == this.email)&&(data.docs[0].type == "user"))
      {
     this.alert.showSuccess("successfully","logged in");
 

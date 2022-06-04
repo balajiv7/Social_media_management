@@ -149,7 +149,7 @@ getUserPostDetails(id:any)
 
 // https://5804af1c-53d6-4cc1-b0eb-5219a1cc5775-bluemix.cloudantnosqldb.appdomain.cloud/balaji_trainee/_all_docs?include_docs=true&attachments=true
 postingimage(imageData) {
-  // return this.http.put();const 
+   
   const url =`${this.url}balaji_trainee/${imageData.id}/images?rev=${imageData.rev}`
   const header ={ headers: {
     'Authorization' : this.basicAuth,
@@ -159,7 +159,7 @@ return this.http.put(url,imageData.imageData,header)
 }
 show() {
   console.log(this.temp);
-  this.route.navigate(['view1']);
+  this.route.navigate(['singleview']);
   return this.temp;
 }
 storedata(formvalue:any)
@@ -168,6 +168,13 @@ storedata(formvalue:any)
   console.log(formvalue);
   return this.http.post<any>('http://localhost:8000/postdata/',formvalue);
 }
+
+sendmail(mailvalue){
+  console.log(mailvalue);
+  return this.http.post<any>('http://localhost:8000/mail/',mailvalue);
+
+}
+
 checkuserlogin(email:any)
  {
   return this.http.get<any>('http://localhost:8000/getdata/'+email);

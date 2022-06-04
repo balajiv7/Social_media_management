@@ -1,0 +1,26 @@
+.container{
+    height: 70vh;
+    
+}
+.center {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    font-size: 30px;
+}
+td,th {
+    font-size: 20px;
+}
+.table{
+    border: 2px solid gray;
+    background-image: linear-gradient(to right,violet,rgb(141, 213, 232));
+}
+
+#back{
+    margin-left: 10px;
+    font-size: 39px;
+    font-family: sans-serif;
+    background: #082bf0;
+    color: beige;
+}
+

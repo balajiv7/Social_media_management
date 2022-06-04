@@ -1,18 +1,11 @@
 .grid-container {
     display: grid;
-    /* color: white; */
     grid-template-columns: auto auto auto;
-    /* background-color: #2196f3; */
-    /* background-image: url(../../assets/images/webdesign.jpg); */
     background-repeat: no-repeat;
-    /* background-size: cover; */
     padding: 10px;
   }
   .grid-item {
-    /* background-color: rgba(255, 255, 255, 0.8); */
-    /* border: 1px solid rgba(0, 0, 0, 0.8); */
     padding: 20px;
-    /* font-size: 30px; */
     text-align: center;
   }
   .grid-item:hover {
@@ -64,4 +57,7 @@
       height: 70px;
       font-weight: bold;
       font-size: larger;
+  }
+  h1 {
+      padding-left: 20px;
   }

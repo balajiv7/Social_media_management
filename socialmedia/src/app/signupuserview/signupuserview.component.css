@@ -6,6 +6,11 @@
 
 .table{
     margin-top: 100px;
+   width: 200px;
+    border: 2px solid gray;
+    background-image: linear-gradient(to right,violet,rgb(141, 213, 232));
+   margin-left: 300px;
+   height: 100vh;
 }
 .para{
 font-size: 25px;
@@ -27,4 +32,19 @@ margin-left: 10px;
 td,th {
     font-size: 23px;
     
+}
+#logout{
+    margin-left: 1400px;
+    margin-top: -1847px;
+    width: 181px;
+    font-size: 39px;
+    font-family: sans-serif;
+}
+#back {
+  
+        margin-top: -1600px;
+        width: 181px;
+        margin-left: 1400px;
+        font-size: 39px;
+        font-family: sans-serif;
 }

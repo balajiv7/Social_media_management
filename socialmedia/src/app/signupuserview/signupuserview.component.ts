@@ -189,6 +189,11 @@ export class SignupuserviewComponent implements OnInit {
       this.route.navigate(['']);
       
     }
+    back() {
+      this.route.navigate(['schedule/']);
+      this.route.navigate(['schedule', this.userData.firstName]);
+  
+    }
   }
   
   
