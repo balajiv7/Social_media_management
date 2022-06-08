@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
 import { ApiService } from '../api.service';
 import { ToastarService } from '../toastar.service';
+import { element } from 'protractor';
  
 
 @Component({
@@ -24,6 +25,8 @@ fields : any;
 temp:any;
 mindate : any;
 appvalue :any;
+socialapps :any;
+socialApps:any = [];
 
 
   postRecord : any = {
@@ -53,6 +56,7 @@ appvalue :any;
         this.custid = iterator.id;
         console.log("custid" , this.custid);
       }
+
      
   });
    
@@ -81,10 +85,26 @@ appvalue :any;
    
   ngOnInit(): void {
     this.pastdate()
+    this.newpostview();
   }
  
 url = "";
+
+newpostview() {
+  this.api.getsocialapps("social").subscribe((data:any) => {
+    console.log(data);
+    let value  = data.rows
+    console.log(value);
+    for (let m = 0; m < value.length; m++) {
+      
+      this.socialApps[m]  =  value[m].doc.postapp
+    }
+   console.log(this.socialApps);
+  });
+}
   
+
+
 
   get firstName() {
     return this.formGroup.get('firstName')!;
@@ -157,15 +177,7 @@ url = "";
       type : "postinfo",
       post : postid
     }
-     const mailvalue = { 
-       Name : Formvalue.firstName,
-       email : Formvalue.email,
-       post : Formvalue.post,
-       date : Formvalue.date,
-       time : Formvalue.time,
-       image : postobj.image,
-       postapp : this.appvalue
-     };
+    
    
 
    console.log(postobj);
@@ -193,9 +205,7 @@ url = "";
        console.log(rej);
      });
      this.route.navigate(['signupuserview']);
-     this.api.sendmail(mailvalue).subscribe((information => {
-       console.log(information);
-     }))
+     
    }
 
   fetch() {
@@ -219,14 +229,7 @@ url = "";
      
     }
     
-    
-
-  
-
-
-
-
-  postSelected(event){
+      postSelected(event){
     
     console.log(event);
     this.appvalue = event;
@@ -254,6 +257,6 @@ url = "";
   }
   out() {
     localStorage.clear();
-    this.route.navigate(['']);
+  this.route.navigate(['Login']);
   }
 }

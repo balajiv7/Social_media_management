@@ -1,4 +1,5 @@
-<section class="total">
+<section class="total"  >
+  
   <div>
   <h1 class="head">What is Social Media Scheduling?</h1>
 <p class="para">Social media scheduling tools are the easiest way to keep your social media accounts updated consistently. Social media scheduling allows you to share your content at times when your audience is most likely to be consuming the content, and with this tool, you'll always hit publish on a time when engagement is highest.
@@ -35,15 +36,27 @@
 
 
       <td><button class="btn info del" (click)="erase(user._id,user._rev)">Delete </button> </td>
+      
+
 </tr>
 
+
 </table>
+<div class="empty" *ngIf="temp2.length==0">
+  No Records Found
+
 </div>
+</div>
+</section>
+
+
+ 
+
+
 <div class="down">
       <button class="btn btn-primary" id="logout" (click)=out()>logout</button>
       <button class="btn btn-primary" id="back" (click)=back()>Back</button>
     </div>
 
-</section>
 
     

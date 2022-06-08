@@ -32,8 +32,8 @@ export class SignupComponent implements OnInit {
   this.formGroup = this.fb.group({
    firstName: ['',Validators.required],
    lastName: ['',Validators.required],
-   email:['',[Validators.required, Validators.pattern("[a-zA-Z0-9]*@gmail.com")]],
-   password: ['',[Validators.required,Validators.pattern("[a-zA-z@_]{6,}")]],
+   email:['',[Validators.required, Validators.email]],
+   password: ['',[Validators.required]],
 
    mobile: ['',[Validators.required, Validators.min(1000000000),Validators.max(9999999999)]],
  
@@ -91,22 +91,18 @@ storing(Formvalue:any){
 
    this.api.storedata(object).subscribe((data)=>{
     console.log("data returned from server",data);
-    this.alert.showSuccess("success","data posted")
+    this.alert.showSuccess("success","data posted");
+    this.route.navigate(['Login']);
+    
+
     console.log(Formvalue.firstName);
    
-        console.log("from form",Formvalue);
-        this.temp= data.id
-        console.log(this.temp);
-        console.log("data",this.temp);
-
-        const userData = Formvalue;
-        console.log("userData",userData);
-        console.log("firstName",Formvalue.firstName);
-        localStorage.setItem('userData',JSON.stringify(userData))
-        this.route.navigate(['schedule',Formvalue.firstName]);
+       
 
     },rej =>{
       console.log(rej)
-      this.alert.showError("data cant post","error");
-    });}
+
+    }  
+    );}
+
   }

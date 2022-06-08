@@ -26,6 +26,7 @@
           <input id="email" class="form-control" formControlName="email" placeholder="Email (required)" required />
           <div class="help-block text-danger" *ngIf="email.touched">
             <span *ngIf="email.errors?.required"> Email is REQUIRED!!! </span>
+            <span *ngIf="email.errors?.email"> Email is Invalid!!! </span>
           </div>
         </div>
 
@@ -44,11 +45,11 @@
           <span *ngIf="formGroup.controls.mobile.errors && formGroup.controls.mobile.touched" isdisabled> mobileNumber is REQUIRED!!! </span>
           </div>
         </div><br>
-
-        <button class="btn btn-primary" type="submit">Sign Up</button> <span> Or <button class="btn btn-secondary"
-            routerLink="/Login">Login</button> </span>
+      <div class="foot">
+        <button class="btn" type="submit">Sign Up</button> <button class="btn"
+            routerLink="/Login">Login</button> 
          
-           
+       </div>    
       </form>
     </div>
     </div>

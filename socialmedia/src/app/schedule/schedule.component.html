@@ -1,7 +1,14 @@
+<div class="content">
+  <h2> Social Media Scheduling Tool</h2>
+  <p>A Social media scheduling tool can help plan in advance and free up the time to interact with the customers by giving a chance to balance the posting and plan out a well-thought-out strategy.Real-time market information and well-planned out social media strategy can yield greater results for a company</p>
+<img src="../../assets/images/bala.jpg" alt="img">
+<p><span>Schedule Your Posts Below!!</span></p>
+
+</div>
 <div class="container">
   <h1 class="title">SCHEDULE YOUR POST</h1>
 <div class="content">
-  <div class="d-flex justify-content-center backcolor">
+    <div class="schedule">
     <form [formGroup]="formGroup" (ngSubmit)="storing(this.formGroup.value)">
     
       <div class="form-group">
@@ -30,11 +37,9 @@
 
       <div class="form-group">
         <label for="social">Choose a social app to post:</label>
-        <select id="social" name="social" (change)="postSelected($event.target.value)" formControlName="social">
-          <option value="Facebook">Facebook</option>
-          <option value="Instagram">Instagram</option>
-          <option value="Youtube">Youtube</option>
-          <option value="Twitter">Twitter</option>
+        <select id="social" name="social" (change)="postSelected($event.target.value)" formControlName="social" >
+          
+          <option *ngFor="let Apps of socialApps" [value]="Apps">{{Apps}}</option>
         </select>
 
       </div>
@@ -49,10 +54,10 @@
         <label for="Time">Time</label>
         <input type="time" id="Time" class="form-control" formControlName="Time" required />
       </div>
-      <hr />
+      
       <div class="move">
-      <button class="btn btn-primary" type="submit">Schedule</button> 
-      <button class="btn btn-primary"id="btn2" (click)="fetch()">List</button>
+      <button class="btn btn-primary" type="submit" id="btn2">Schedule</button> 
+      <button class="btn btn-primary"id="btn2" (click)="fetch()">List view</button>
       <button class="btn btn-primary"id="btn2" (click)="out()">Logout</button>
     </div>
     </form>

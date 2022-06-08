@@ -147,7 +147,7 @@ getUserPostDetails(id:any)
  return this.http.get<any>('http://localhost:8000/getuserdata/'+id);
 }
 
-// https://5804af1c-53d6-4cc1-b0eb-5219a1cc5775-bluemix.cloudantnosqldb.appdomain.cloud/balaji_trainee/_all_docs?include_docs=true&attachments=true
+
 postingimage(imageData) {
    
   const url =`${this.url}balaji_trainee/${imageData.id}/images?rev=${imageData.rev}`
@@ -169,11 +169,7 @@ storedata(formvalue:any)
   return this.http.post<any>('http://localhost:8000/postdata/',formvalue);
 }
 
-sendmail(mailvalue){
-  console.log(mailvalue);
-  return this.http.post<any>('http://localhost:8000/mail/',mailvalue);
 
-}
 
 checkuserlogin(email:any)
  {
@@ -184,9 +180,7 @@ checkuserlogin(email:any)
   return this.http.get<any>('http://localhost:8000/getdata/'+email+'/'+password);
  }
 
- edit(details:any) {
-   return this.http.put<any>('http://localhost:8000//update_query/',details);
- }
+
 
  newuserview(type:any,email:any) {
    let url = this.url+'balaji_trainee/_design/userview/_view/new-userview?include_docs=true'
@@ -201,7 +195,12 @@ checkuserlogin(email:any)
   return this.http.post(url, key, this.httpOptions);
 }
 
+getsocialapps(type:any) {
+  let url = this.url+'balaji_trainee/_design/lookup/_view/socialapps_view?include_docs=true'
+ let key = {"keys": [type]}
+ return this.http.post(url, key, this.httpOptions);
 
+}
 
 storepostdata(formvalue:any)
 {
@@ -212,11 +211,7 @@ storepostdata(formvalue:any)
 
 }
 
-mail(formvalue:any){
-  console.log(formvalue);
-  return this.http.post<any>('http://localhost:8000/mail/',formvalue);
 
-}
 login(){
   return this.http.get<any>('http://localhost:8000/getdata/');
 }

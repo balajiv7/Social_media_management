@@ -1,26 +1,19 @@
 <div class="container">
   <h1 class="title">LOGIN</h1>
 <form [formGroup]="formGroup">
-    
       <div class="form-outline mb-4">
         <label class="form-label" for="form2Example1">Email address</label>
         <input type="email" id="form2Example1" formControlName="email" class="form-control" />
         <span class="text-danger" *ngIf="formGroup.controls.email.errors && formGroup.controls.email.touched"><br>Invalid Email Address</span>
-       
       </div>
-    
-    
       <div class="form-outline mb-4">
         <label class="form-label" for="form2Example2">Password</label>
         <input type="password" id="form2Example2" formControlName="password" class="form-control" />
         <span class="text-danger" *ngIf="formGroup.controls.password.errors && formGroup.controls.password.touched"><br>Invalid Password</span>
       </div>
-   
       <div class="row mb-4">
         <div class="col d-flex justify-content-center">
- 
       </div>
-    
         <div>
         <button type="button" class="login" (click)="login(this.formGroup.value)">Login</button>
      

@@ -175,7 +175,8 @@ return this.formGroup.get('firstName')!
 
   out(){
      localStorage.removeItem('userData'); 
-    this.route.navigate(['']);
+  this.route.navigate(['Login']);
+
     
   }
   back() {
