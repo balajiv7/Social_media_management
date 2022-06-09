@@ -186,17 +186,8 @@ newpostview() {
     
      this.api.add("balaji_trainee", postobj).subscribe(res => {
        console.log(res);
-       const imageUpload = {
-         id : res['id'],
-         rev : res['rev'],
-         imageData:{"images":this.image1}
-       }
-        this.api.postingimage(imageUpload).subscribe(data=>{
-          console.log(data)
-        },err=>{
-          console.log(err)
-        })
-        
+    
+      
             this.alert.showSuccess("success","data posted successfully");
 
 
@@ -204,7 +195,7 @@ newpostview() {
    
        console.log(rej);
      });
-     this.route.navigate(['signupuserview']);
+     this.route.navigate(['scheduleview']);
      
    }
 

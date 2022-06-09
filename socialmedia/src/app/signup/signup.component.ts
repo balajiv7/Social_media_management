@@ -101,6 +101,8 @@ storing(Formvalue:any){
 
     },rej =>{
       console.log(rej)
+    
+
 
     }  
     );}

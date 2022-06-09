@@ -57,10 +57,10 @@ if(data.docs.length <=0){
      localStorage.setItem('userData',JSON.stringify(userData))
     this.router.navigate(['schedule',data.docs[0].firstName]);
      }
-     else{
-    this.alert.showSuccess("enter correct emailid","or password");
+    
+     else {
+      this.alert.showSuccess("enter correct emailid","or password");
 
-     
      }
     })
   

@@ -148,15 +148,7 @@ getUserPostDetails(id:any)
 }
 
 
-postingimage(imageData) {
-   
-  const url =`${this.url}balaji_trainee/${imageData.id}/images?rev=${imageData.rev}`
-  const header ={ headers: {
-    'Authorization' : this.basicAuth,
-    'Content-Type': 'image/jpg'
-  }}
-return this.http.put(url,imageData.imageData,header)
-}
+
 show() {
   console.log(this.temp);
   this.route.navigate(['singleview']);

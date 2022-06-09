@@ -25,7 +25,7 @@ const routes: Routes = [
   {path : 'singleview', component : SingleviewComponent},
   {path:'news',component:NewsComponent},
   {path:'contact',component:ContactComponent},
-  {path:'signupuserview',component:SignupuserviewComponent}
+  {path:'scheduleview',component:SignupuserviewComponent}
 
 ];
 
