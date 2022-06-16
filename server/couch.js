@@ -9,9 +9,6 @@ const port = 8000;
 const setmail = require('./mail');
 const nodemail = require('nodemailer');
 
-
-
-
 app.use(cors({
   origin: 'http://localhost:4200'
 }));
@@ -33,8 +30,11 @@ app.get('/getdata/:id', (req,res) => {
     }
     dbconnection.trainee.find(object).then((data) => {
         console.log("firstname",data);  
-        res.json(data);      
-    })
+        res.json(data);  
+
+       
+    },)
+   
     });
 
 
@@ -101,6 +101,11 @@ app.post('/postdata', function (req,res) {
                 message:err
             })
             }));
+        }
+        else {
+            res.status(400).send({
+                reason:"Email Already Exists"
+            })
         }
 }).catch((err=>{
     console.log("err2",err);
