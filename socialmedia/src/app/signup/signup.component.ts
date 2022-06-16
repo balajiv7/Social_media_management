@@ -100,8 +100,13 @@ storing(Formvalue:any){
        
 
     },rej =>{
-      console.log(rej)
-    
+      if(rej) {
+      console.log(rej.error.message.reason)
+      }
+      else{
+      console.log("invalid");
+
+      }
 
 
     }  

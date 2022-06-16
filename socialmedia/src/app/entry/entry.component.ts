@@ -27,7 +27,7 @@ export class EntryComponent implements OnInit {
 
   this.formGroup = this.fb.group({
 
-   email: ['',Validators.required],
+    email:['',[Validators.required, Validators.email]],
    password: ['',Validators.required],
    type: [this.empRecord.type]
   });
@@ -48,7 +48,7 @@ if(data.docs.length <=0){
   this.alert.showError("Invalid Data", "Email doesnot Exist");
 }
 
-     else if((data.docs[0].email == this.email)&&(data.docs[0].type == "user"))
+     else if((data.docs[0].email == this.email)&&(data.docs[0].type == "user")&&(data.docs[0].password==this.password))
      {
     this.alert.showSuccess("successfully","logged in");
 
@@ -57,12 +57,20 @@ if(data.docs.length <=0){
      localStorage.setItem('userData',JSON.stringify(userData))
     this.router.navigate(['schedule',data.docs[0].firstName]);
      }
-    
+     else if(data.docs[0].password != this.password) {
+      this.alert.showError("invalid","password is incorrect")
+     }
      else {
-      this.alert.showSuccess("enter correct emailid","or password");
+    this.alert.showError("enter something","cant login");
 
      }
-    })
+    
+   
+    },rej =>{
+     console.log(rej);
+
+
+    }  )
   
  }
 

@@ -28,15 +28,7 @@ width: 500px;
 margin-left: 100px;
 
 }
-/* .btn{
-    width: 147px;
-    margin-left: 300px;
-} */
-/* #btn1{
-    width: 147px;
-    margin-left: 100px;
 
-} */
 #btn2{
     width: 147px;
     margin-right: 60px;
@@ -74,7 +66,8 @@ img{
 }
 span{
     color:green;
-    font-size:34px;
+    font-size:56px;
     font-style: italic;
-    margin-left:35%;
+    margin-left:20%;
+    text-transform: capitalize;
 }

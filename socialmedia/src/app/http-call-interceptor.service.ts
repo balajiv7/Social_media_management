@@ -20,6 +20,9 @@ export class HttpCallInterceptorService implements HttpInterceptor {
                 if(err.error["message"]){
                     this.toastr.error(err.error.message.reason);
                 }
+                else if(err.statusText == "Not Found") {
+                    this.toastr.error("enter something");
+                }
                 else{
                     this.toastr.error(err.error.reason);
 

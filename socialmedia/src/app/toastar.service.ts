@@ -26,8 +26,5 @@ export class ToastarService {
      
      showWarning(message: string | undefined, title: string | undefined) {
       this.notifyService.warning(message, title)
-     }
-    
-    
-    
+     }    
 }

@@ -18,6 +18,7 @@ export class ScheduleComponent implements OnInit {
 
   formGroup : FormGroup;
 id : any;
+userData : any;
 userid:any;
 custid  :any;
 postid  :any;
@@ -32,7 +33,6 @@ socialApps:any = [];
   postRecord : any = {
     firstName: '',
     email : '',
-  
     post : '',
     Date : '',
     Time :'',
@@ -46,6 +46,7 @@ socialApps:any = [];
   constructor(private fb: FormBuilder,private api:ApiService,private route:Router,private authservice :AuthenticationService,private alert:ToastarService) {
     
     const fn =JSON.parse(localStorage.getItem('userData'));
+    this.userData = fn
     this.api.newuserview("user",fn.email).subscribe((data)=> {
       console.log(data);
       this.userid=data
@@ -84,7 +85,7 @@ socialApps:any = [];
    }
    
   ngOnInit(): void {
-    this.pastdate()
+    this.pastdate();
     this.newpostview();
   }
  

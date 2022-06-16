@@ -3,14 +3,14 @@
   <h2> Social Media Scheduling Tool</h2>
   <p>A Social media scheduling tool can help plan in advance and free up the time to interact with the customers by giving a chance to balance the posting and plan out a well-thought-out strategy.Real-time market information and well-planned out social media strategy can yield greater results for a company</p>
 <img src="../../assets/images/bala.jpg" alt="img">
-<p><span>Schedule Your Posts Below!!</span></p>
+<p><span> Hi {{userData.firstName}}, Schedule Your Posts Below!!</span></p>
 
 </div>
 <div class="container">
   <h1 class="title">SCHEDULE YOUR POST</h1>
 <div class="content">
     <div class="schedule">
-    <form [formGroup]="formGroup" (ngSubmit)="storing(this.formGroup.value)">
+    <form [formGroup]="formGroup" (ngSubmit)="storing(this.formGroup.value)" #postForm="ngForm">
     
       <div class="form-group">
         <label for="FirstName">First Name</label>
@@ -53,11 +53,11 @@
 
       <div class="form-group">
         <label for="Time">Time</label>
-        <input type="time" id="Time" class="form-control" formControlName="Time" required />
+        <input type="time" id="Time" class="form-control" formControlName="Time" required  />
       </div>
       
       <div class="move">
-      <button class="btn btn-primary" type="submit" id="btn2">Schedule</button> 
+      <button class="btn btn-primary" type="submit" id="btn2" >Schedule</button> 
       <button class="btn btn-primary"id="btn2" (click)="fetch()">List view</button>
       <button class="btn btn-primary"id="btn2" (click)="out()">Logout</button>
     </div>
