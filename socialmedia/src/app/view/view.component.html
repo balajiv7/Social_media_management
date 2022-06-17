@@ -21,8 +21,10 @@
       <th>TIME</th>
       <th>SOCIAL</th>
       <th>POST</th>
-
-
+      <th>VIEW</th>
+      <th>DELETE</th>
+      <th>STATUS</th>
+    
   
     </tr>
     <tr *ngFor="let user of temp2">
@@ -32,24 +34,26 @@
       <td>{{user.date}}</td>
       <td>{{user.time}}</td>
       <td>{{user.social}}</td>
-      <td> <img class ="imageStyle" onerror="this.src='../../assets/images/spinner.gif'" src="{{user.image}}" alt="image" ></td>     
-    
-  
-     
-
-      <td><button class="btn info" (click)="ViewBYIndividual(user._id,temp2)">View </button> </td>
-
-
-      <td><button class="btn info del" (click)="erase(user._id,user._rev)">Delete </button> </td>
       
 
+      <td> <img class ="imageStyle" onerror="this.src='../../assets/images/spinner.gif'" src="{{user.image}}" alt="image" ></td>  
+
+ 
+      <td><button class="btn info" (click)="ViewBYIndividual(user._id,temp2)">View </button> </td>
+      <td><button class="btn info del" (click)="erase(user._id,user._rev)">Delete </button> </td>
+
+
+      <td  *ngIf="user.date > cdate"> <p class="state">Yet To Post</p></td>
+
+
+      <td  *ngIf="user.date <= cdate && user.time <= ctime "> <button class="status" (click)="viewsofpost()" > Posted</button></td>
+      <td  *ngIf="user.date <= cdate && user.time <= ctime" class="status">VIEWS  {{postviews}} <br> Likes {{postlikes}}</td>
+
+
 </tr>
-
-
 </table>
 <div class="empty" *ngIf="temp2.length==0">
   No Records Found
-
 </div>
 </div>
 </section>

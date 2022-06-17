@@ -20,6 +20,7 @@ import { SingleviewComponent } from './singleview/singleview.component';
  import { ToastrModule } from 'ngx-toastr';
 import { HttpCallInterceptorService } from './http-call-interceptor.service';
 import { SignupuserviewComponent } from './signupuserview/signupuserview.component';
+import { DatePipe } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,7 @@ import { SignupuserviewComponent } from './signupuserview/signupuserview.compone
   ],
   providers:[ {provide: HTTP_INTERCEPTORS,
     useClass: HttpCallInterceptorService,
-    multi: true}]
+    multi: true},DatePipe]
 ,
   bootstrap: [AppComponent]
 })

@@ -34,7 +34,7 @@ line-height: 2;
     margin-top: 25px;
 }
 strong {
-    background-color: skyblue;
+    background-color: #0069d9;
     margin-left: 60px;
     margin-bottom: 20px;
     margin-top: 35px;
@@ -44,6 +44,8 @@ strong {
     color: white;
 
 }
+
+
 
 .head{
    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
@@ -74,4 +76,18 @@ td,th {
     font-family: sans-serif;
 } 
 
+.status {
+    color: red;
+    font-size: 25px;
+    background: white;
 
+}
+.state {
+    color: whitesmoke;
+    background: darkmagenta;
+    font-size: 25px;
+    
+}
+.container {
+    margin-left: 55px;
+}

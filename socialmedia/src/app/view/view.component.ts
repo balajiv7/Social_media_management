@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from '../api.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-view',
@@ -14,6 +15,15 @@ alluser : any;
 alluserData :any;
 fields:any;
 temp2 :any;
+cdate : any;
+ctime : any;
+randomviews :any;
+randomLikes : any;
+postviews :any;
+postlikes : any;
+views : any;
+Likes : any;
+
 socialdetails:any;
 socialapp : any;
 ids = [];
@@ -30,13 +40,24 @@ empRecord: any = {
   firstName: '',
 };
 
+
+
 public userData:any;
-constructor(private fb: FormBuilder , private route: Router, private api : ApiService) {
+constructor(private fb: FormBuilder , private route: Router, private api : ApiService,public datepipe: DatePipe) {
     
   let fn =JSON.parse(localStorage.getItem('userData'));
   console.log(fn);
   this.userData = fn
- 
+  this.cdate =this.datepipe.transform((new Date), 'yyyy-MM-dd');
+  this.ctime =this.datepipe.transform((new Date), 'h:mm');
+  console.log(this.cdate);
+  console.log(this.ctime);
+
+  this.randomviews =  Math.floor(Math.random() * 10000)
+  this.randomLikes =  Math.floor(Math.random() * 10000)
+  this.views = this.randomviews
+  this.Likes = this.randomLikes
+
    this.getBytype(fn._id);
 
 {
@@ -48,10 +69,20 @@ console.log(this.formGroup)
 
 }
 
+viewsofpost() {
 
+  
+  this.views =  this.views +8
+  this.postviews = this.views
+  this.Likes = this.Likes + 3
+  this.postlikes = this.Likes
+ console.log(this.views);
+ console.log(this.Likes);
+}
 
 ngOnInit(): void {
   console.log("view");
+  
 }
 get firstName(){
 return this.formGroup.get('firstName')!
@@ -140,6 +171,9 @@ return this.formGroup.get('firstName')!
     console.log(data[0]);
     console.log(data[1]);
     console.log("temp2",this.temp2)
+
+
+
     console.log(this.temp2[0]);
     
     })
